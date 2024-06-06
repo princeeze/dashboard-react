@@ -4,6 +4,7 @@ export default {
   darkMode: "class",
   theme: {
     fontFamily: {
+      sans: ["Open Sans", "sans-serif"],
       display: ["Open Sans", "sans-serif"],
       body: ["Open Sans", "sans-serif"],
     },
