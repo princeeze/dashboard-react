@@ -49,37 +49,43 @@ const App = () => {
   return (
     <div className={`"dark_checker" ${currentMode === "Dark" ? "dark" : ""}`}>
       <BrowserRouter>
-        <div className="router_container flex dark:bg-main-dark-bg">
-          <div className="settings fixed bottom-4 right-4 z-[1000]">
+        <div className="page_container relative flex overflow-x-hidden dark:bg-main-dark-bg">
+          {/* Settings */}
+          <div className="settings fixed bottom-4 right-4 z-50">
             <TooltipComponent content="Settings" position="Top">
               <button
                 type="button"
                 onClick={() => setThemeSettings(true)}
-                style={{ background: currentColor, borderRadius: "50%" }}
-                className="p-3 text-3xl text-white hover:bg-light-gray hover:drop-shadow-xl"
+                className={
+                  "rounded-full p-3 text-3xl text-white hover:bg-light-gray hover:drop-shadow-xl"
+                }
+                style={{ background: currentColor }}
               >
                 <FiSettings />
               </button>
             </TooltipComponent>
           </div>
+
+          {/* Sidebar */}
           {activeMenu ? (
-            <div className="sidebar fixed w-72 bg-white dark:bg-secondary-dark-bg">
+            <div className="c-sidebar fixed z-10 bg-white shadow-[rgb(113_122_131_/_11%)_0px_7px_30px_0px] md:static dark:bg-secondary-dark-bg">
               <Sidebar />
             </div>
           ) : (
-            <div className="sidebar_collapsed w-0 dark:bg-secondary-dark-bg">
+            <div className="c-sidebar_collapsed w-0">
               <Sidebar />
             </div>
           )}
 
+          {/* Main */}
           <div
-            className={
+            className={`c-main ${
               activeMenu
-                ? "min-h-screen w-full bg-main-bg dark:bg-main-dark-bg md:ml-72"
-                : "flex-2 min-h-screen w-full bg-main-bg dark:bg-main-dark-bg"
-            }
+                ? "min-h-screen w-full bg-main-bg md:mx-4 dark:bg-main-dark-bg"
+                : "min-h-screen w-full bg-main-bg dark:bg-main-dark-bg"
+            } `}
           >
-            <div className="navbar fixed w-full bg-main-bg dark:bg-main-dark-bg md:static">
+            <div className="navbar fixed w-full bg-main-bg md:static dark:bg-main-dark-bg">
               <Navbar />
             </div>
             <div>
