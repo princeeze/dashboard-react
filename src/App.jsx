@@ -86,7 +86,7 @@ const App = () => {
             } `}
           >
             {/* Navbar */}
-            <div className="navbar z-30 w-full bg-main-bg dark:bg-main-dark-bg">
+            <div className="navbar fixed z-30 w-[-moz-available] w-[-webkit-fill-available] bg-main-bg dark:bg-main-dark-bg">
               <Navbar />
             </div>
 
