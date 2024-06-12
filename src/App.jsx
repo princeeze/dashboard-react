@@ -49,7 +49,7 @@ const App = () => {
   return (
     <div className={`"dark_checker" ${currentMode === "Dark" ? "dark" : ""}`}>
       <BrowserRouter>
-        <div className="page_container relative flex overflow-x-hidden dark:bg-main-dark-bg">
+        <div className="page_container relative flex max-h-screen overflow-x-hidden dark:bg-main-dark-bg">
           {/* Settings */}
           <div className="settings fixed bottom-4 right-4 z-50">
             <TooltipComponent content="Settings" position="Top">
@@ -68,7 +68,7 @@ const App = () => {
 
           {/* Sidebar */}
           {activeMenu ? (
-            <div className="c-sidebar fixed z-10 bg-white shadow-[rgb(113_122_131_/_11%)_0px_7px_30px_0px] md:static dark:bg-secondary-dark-bg">
+            <div className="c-sidebar fixed z-40 bg-white shadow-[rgb(113_122_131_/_11%)_0px_7px_30px_0px] dark:bg-secondary-dark-bg">
               <Sidebar />
             </div>
           ) : (
@@ -77,17 +77,19 @@ const App = () => {
             </div>
           )}
 
-          {/* Main */}
+          {/* Main Container*/}
           <div
             className={`c-main ${
               activeMenu
-                ? "min-h-screen w-full bg-main-bg md:mx-4 dark:bg-main-dark-bg"
-                : "min-h-screen w-full bg-main-bg dark:bg-main-dark-bg"
+                ? "min-h-screen bg-main-bg md:ml-72 dark:bg-main-dark-bg"
+                : "min-h-screen bg-main-bg dark:bg-main-dark-bg"
             } `}
           >
-            <div className="navbar fixed w-full bg-main-bg md:static dark:bg-main-dark-bg">
+            {/* Navbar */}
+            <div className="navbar fixed z-30 w-full bg-main-bg dark:bg-main-dark-bg">
               <Navbar />
             </div>
+
             <div>
               {themeSettings && <ThemeSettings />}
 
