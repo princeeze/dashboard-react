@@ -59,7 +59,7 @@ const Navbar = () => {
 
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
-  return (
+  /* return (
     <div className="relative flex justify-between p-2 md:ml-6 md:mr-6">
       <NavButton
         title="Menu"
@@ -117,7 +117,7 @@ const Navbar = () => {
         {isClicked.userProfile && <UserProfile />}
       </div>
     </div>
-  );
+  ); */
 };
 
 export default Navbar;
