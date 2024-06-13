@@ -24,7 +24,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar ml-3 h-screen w-72 overflow-scroll pb-10">
       {/* Sidebar Header */}
-      <div className="sidebar-header flex items-baseline justify-between">
+      <div className="sidebar-header ml-4 mt-4 flex items-baseline justify-between">
         <Link
           to="/"
           onClick={handleCloseSideBar}
