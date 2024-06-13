@@ -104,7 +104,9 @@ const Navbar = () => {
                 Michael
               </span>
             </p>
-            <MdKeyboardArrowDown className="text-14 text-gray-400" />
+            <MdKeyboardArrowDown
+              className={`text-14 text-gray-400 ${isClicked.userProfile ? "rotate-180" : ""}`}
+            />
           </div>
         </TooltipComponent>
 
