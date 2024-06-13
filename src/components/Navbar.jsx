@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 import { BsChatLeft } from "react-icons/bs";
@@ -38,16 +38,16 @@ const Navbar = () => {
     screenSize,
   } = useStateContext();
 
+  // Add eventlistener for window
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
-
     window.addEventListener("resize", handleResize);
-
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  //setActiveMenu when screenSize changes
   useEffect(() => {
     if (screenSize <= 900) {
       setActiveMenu(false);
@@ -87,6 +87,7 @@ const Navbar = () => {
           color={currentColor}
           icon={<RiNotification3Line />}
         />
+
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
             className="flex cursor-pointer items-center gap-2 rounded-lg p-1 hover:bg-light-gray"
