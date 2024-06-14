@@ -1,5 +1,4 @@
 import { BsCurrencyDollar } from "react-icons/bs";
-// import { GoPrimitiveDot } from 'react-icons/go';
 import { IoIosMore } from "react-icons/io";
 import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
 
@@ -34,9 +33,9 @@ const Ecommerce = () => {
   const { currentColor, currentMode } = useStateContext();
 
   return (
-    <div className="mt-24">
-      <div className="flex flex-wrap justify-center lg:flex-nowrap">
-        <div className="m-3 h-44 w-full rounded-xl bg-white bg-hero-pattern bg-cover bg-center bg-no-repeat p-8 pt-9 lg:w-80 dark:bg-secondary-dark-bg dark:text-gray-200">
+    <div className="c-ecommerce mt-24">
+      <div className="stats flex flex-wrap items-center gap-1 px-8">
+        <div className="earnings m-3 h-44 w-full rounded-xl bg-white bg-hero-pattern bg-cover bg-center bg-no-repeat p-8 pt-9 lg:w-80 dark:bg-secondary-dark-bg dark:text-gray-200">
           <div className="flex items-center justify-between">
             <div>
               <p className="font-bold text-gray-400">Earnings</p>
@@ -59,29 +58,27 @@ const Ecommerce = () => {
             />
           </div>
         </div>
-        <div className="m-3 flex flex-wrap items-center justify-center gap-1">
-          {earningData.map((item) => (
-            <div
-              key={item.title}
-              className="h-44 rounded-2xl bg-white p-4 pt-9 md:w-56 dark:bg-secondary-dark-bg dark:text-gray-200"
+        {earningData.map((item) => (
+          <div
+            key={item.title}
+            className="h-44 rounded-2xl bg-white p-4 pt-9 md:w-56 dark:bg-secondary-dark-bg dark:text-gray-200"
+          >
+            <button
+              type="button"
+              style={{ color: item.iconColor, backgroundColor: item.iconBg }}
+              className="opacity-0.9 rounded-full p-4 text-2xl hover:drop-shadow-xl"
             >
-              <button
-                type="button"
-                style={{ color: item.iconColor, backgroundColor: item.iconBg }}
-                className="opacity-0.9 rounded-full p-4 text-2xl hover:drop-shadow-xl"
-              >
-                {item.icon}
-              </button>
-              <p className="mt-3">
-                <span className="text-lg font-semibold">{item.amount}</span>
-                <span className={`text-sm text-${item.pcColor} ml-2`}>
-                  {item.percentage}
-                </span>
-              </p>
-              <p className="mt-1 text-sm text-gray-400">{item.title}</p>
-            </div>
-          ))}
-        </div>
+              {item.icon}
+            </button>
+            <p className="mt-3">
+              <span className="text-lg font-semibold">{item.amount}</span>
+              <span className={`text-sm text-${item.pcColor} ml-2`}>
+                {item.percentage}
+              </span>
+            </p>
+            <p className="mt-1 text-sm text-gray-400">{item.title}</p>
+          </div>
+        ))}
       </div>
 
       <div className="flex flex-wrap justify-center gap-10">
