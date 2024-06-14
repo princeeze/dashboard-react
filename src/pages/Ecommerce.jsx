@@ -4,6 +4,7 @@ import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
 
 import { Stacked, Pie, Button, LineChart, SparkLine } from "../components";
 import {
+  totalEarnings,
   earningData,
   medicalproBranding,
   recentTransactions,
@@ -33,13 +34,15 @@ const Ecommerce = () => {
   const { currentColor, currentMode } = useStateContext();
 
   return (
-    <div className="c-ecommerce mt-24 px-8">
-      <div className="stats flex flex-wrap items-center gap-1">
+    <div className="c-ecommerce mt-24 px-2 md:px-8">
+      <div className="stats flex flex-wrap items-center gap-x-3 gap-y-2">
         <div className="earnings h-44 w-full rounded-xl bg-white p-8 pt-9 lg:w-80 dark:bg-secondary-dark-bg dark:text-gray-200">
           <div className="flex items-center justify-between">
             <div>
-              <p className="font-bold text-gray-400">Earnings</p>
-              <p className="text-2xl">$63,448.78</p>
+              <p className="font-bold capitalize text-gray-400">
+                {totalEarnings.title}
+              </p>
+              <p className="text-2xl">${totalEarnings.amount}</p>
             </div>
             <button
               type="button"
@@ -61,7 +64,7 @@ const Ecommerce = () => {
         {earningData.map((item) => (
           <div
             key={item.title}
-            className="h-44 rounded-2xl bg-white p-4 pt-9 md:w-56 dark:bg-secondary-dark-bg dark:text-gray-200"
+            className={`${item.title.toLowerCase()} dark:text-gray-200" h-44 flex-grow rounded-2xl bg-white p-4 pt-9 md:w-56 dark:bg-secondary-dark-bg`} //let the className have the title of the item in lowercase (for easier debugging)
           >
             <button
               type="button"
