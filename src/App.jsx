@@ -82,8 +82,8 @@ const App = () => {
           <div
             className={`c-main ${
               activeMenu
-                ? "min-h-screen w-full bg-main-bg md:ml-[18.75rem] dark:bg-main-dark-bg"
-                : "min-h-screen w-full bg-main-bg dark:bg-main-dark-bg"
+                ? "h-min w-full bg-main-bg md:ml-[18.75rem] dark:bg-main-dark-bg"
+                : "h-min w-full bg-main-bg dark:bg-main-dark-bg"
             } `}
           >
             {/* Navbar */}
