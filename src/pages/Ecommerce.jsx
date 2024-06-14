@@ -33,9 +33,9 @@ const Ecommerce = () => {
   const { currentColor, currentMode } = useStateContext();
 
   return (
-    <div className="c-ecommerce mt-24">
-      <div className="stats flex flex-wrap items-center gap-1 px-8">
-        <div className="earnings m-3 h-44 w-full rounded-xl bg-white bg-hero-pattern bg-cover bg-center bg-no-repeat p-8 pt-9 lg:w-80 dark:bg-secondary-dark-bg dark:text-gray-200">
+    <div className="c-ecommerce mt-24 px-8">
+      <div className="stats flex flex-wrap items-center gap-1">
+        <div className="earnings h-44 w-full rounded-xl bg-white p-8 pt-9 lg:w-80 dark:bg-secondary-dark-bg dark:text-gray-200">
           <div className="flex items-center justify-between">
             <div>
               <p className="font-bold text-gray-400">Earnings</p>
