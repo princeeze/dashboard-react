@@ -1,6 +1,7 @@
 import { BsCurrencyDollar } from "react-icons/bs";
 import { IoIosMore } from "react-icons/io";
 import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
+import { GoDotFill } from "react-icons/go";
 
 import { Stacked, Pie, Button, LineChart, SparkLine } from "../components";
 import {
@@ -35,6 +36,7 @@ const Ecommerce = () => {
 
   return (
     <div className="c-ecommerce mt-24 px-2 md:px-8">
+      {/* Stats */}
       <div className="stats flex flex-wrap items-center gap-x-3 gap-y-2">
         <div className="earnings h-44 w-full rounded-xl bg-white p-8 pt-9 lg:w-80 dark:bg-secondary-dark-bg dark:text-gray-200">
           <div className="flex items-center justify-between">
@@ -84,17 +86,22 @@ const Ecommerce = () => {
         ))}
       </div>
 
-      <div className="flex flex-wrap justify-center gap-10">
-        <div className="m-3 rounded-2xl bg-white p-4 md:w-780 dark:bg-secondary-dark-bg dark:text-gray-200">
-          <div className="flex justify-between">
+      {/* Updates */}
+      <div className="c-updates flex flex-wrap justify-center gap-10">
+        <div className="rev-updatesrounded-2xl bg-white p-4 md:w-780 dark:bg-secondary-dark-bg dark:text-gray-200">
+          <div className="rev-header flex justify-between">
             <p className="text-xl font-semibold">Revenue Updates</p>
             <div className="flex items-center gap-4">
               <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
-                <span>{/* <GoPrimitiveDot /> */}</span>
+                <span>
+                  <GoDotFill />
+                </span>
                 <span>Expense</span>
               </p>
               <p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
-                <span>{/* <GoPrimitiveDot /> */}</span>
+                <span>
+                  <GoDotFill />
+                </span>
                 <span>Budget</span>
               </p>
             </div>
