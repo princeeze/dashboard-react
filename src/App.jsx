@@ -82,7 +82,7 @@ const App = () => {
           <div
             className={`c-main ${
               activeMenu
-                ? "min-h-screen bg-main-bg md:ml-72 dark:bg-main-dark-bg"
+                ? "min-h-screen bg-main-bg md:ml-[18.75rem] dark:bg-main-dark-bg"
                 : "min-h-screen bg-main-bg dark:bg-main-dark-bg"
             } `}
           >
