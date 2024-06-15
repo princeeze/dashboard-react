@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const StateContext = createContext();
 
@@ -27,11 +27,14 @@ export const ContextProvider = ({ children }) => {
     localStorage.setItem("colorMode", color);
   };
 
-  const handleClick = (clicked) =>
-    setIsClicked({ ...initialState, [clicked]: true });
+  const handleClick = (clicked) => {
+    setIsClicked((prev) => ({
+      ...initialState,
+      [clicked]: !prev[clicked],
+    }));
+  };
 
   return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <StateContext.Provider
       value={{
         currentColor,
@@ -57,4 +60,5 @@ export const ContextProvider = ({ children }) => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useStateContext = () => useContext(StateContext);
