@@ -56,7 +56,7 @@ const App = () => {
             <TooltipComponent content="Settings" position="Top">
               <button
                 type="button"
-                onClick={() => setThemeSettings(true)}
+                onClick={() => setThemeSettings((prev) => !prev)}
                 className={
                   "rounded-full p-3 text-3xl text-white hover:bg-light-gray hover:drop-shadow-xl"
                 }

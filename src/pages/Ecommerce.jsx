@@ -88,7 +88,7 @@ const Ecommerce = () => {
 
       {/* Updates */}
       <div className="c-updates flex flex-wrap justify-center gap-10">
-        <div className="rev-updatesrounded-2xl bg-white p-4 md:w-780 dark:bg-secondary-dark-bg dark:text-gray-200">
+        <div className="rev-updates rounded-2xl bg-white p-4 md:w-780 dark:bg-secondary-dark-bg dark:text-gray-200">
           <div className="rev-header flex justify-between">
             <p className="text-xl font-semibold">Revenue Updates</p>
             <div className="flex items-center gap-4">
@@ -106,8 +106,9 @@ const Ecommerce = () => {
               </p>
             </div>
           </div>
-          <div className="mt-10 flex flex-wrap justify-center gap-10">
-            <div className="m-4 border-r-1 border-color pr-10">
+
+          <div className="rev-body mt-10 flex flex-wrap justify-center gap-10">
+            <div className="report m-4 border-r-1 border-color pr-10">
               <div>
                 <p>
                   <span className="text-3xl font-semibold">$93,438</span>
@@ -143,7 +144,7 @@ const Ecommerce = () => {
                 />
               </div>
             </div>
-            <div>
+            <div className="rev-chart">
               <Stacked currentMode={currentMode} width="320px" height="360px" />
             </div>
           </div>
